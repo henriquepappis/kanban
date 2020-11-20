@@ -1,0 +1,21 @@
+2020-11-16T20:23:32.294831Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.22) starting as process 89
+2020-11-16T20:23:32.326198Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2020-11-16T20:23:32.438559Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2020-11-16T20:23:36.555006Z 1 [Warning] [MY-012579] [InnoDB] fallocate(18, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.605363Z 1 [Warning] [MY-012579] [InnoDB] fallocate(19, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.641162Z 1 [Warning] [MY-012579] [InnoDB] fallocate(20, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.689513Z 1 [Warning] [MY-012579] [InnoDB] fallocate(21, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.767754Z 1 [Warning] [MY-012579] [InnoDB] fallocate(22, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.807793Z 1 [Warning] [MY-012579] [InnoDB] fallocate(23, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.837478Z 1 [Warning] [MY-012579] [InnoDB] fallocate(24, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.891969Z 1 [Warning] [MY-012579] [InnoDB] fallocate(25, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:36.993574Z 1 [Warning] [MY-012579] [InnoDB] fallocate(26, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:37.030718Z 1 [Warning] [MY-012579] [InnoDB] fallocate(27, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, 0, 16384) returned errno: 22
+2020-11-16T20:23:37.101670Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2020-11-16T20:23:38.430955Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2020-11-16T20:23:39.733879Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2020-11-16T20:23:39.737369Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2020-11-16T20:23:39.770705Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2020-11-16T20:23:40.028138Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.22'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2020-11-16T20:24:10.989360Z 13 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.22).
+2020-11-16T20:24:13.293436Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.22)  MySQL Community Server - GPL.

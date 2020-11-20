@@ -1,0 +1,57 @@
+tb_user
+    - id
+    - login
+    - senha
+
+tb_activities
+    - id
+    - user_id
+    - activity_name
+    - status_id
+
+tb_status
+    - id
+    - status
+
+
+CREATE TABLE `tb_user` (
+    `id` INT(11) unsigned NOT NULL AUTO_INCREMENT,
+    `login` VARCHAR(70),
+    `senha` VARCHAR(256),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `tb_status` (
+    `id` INT(11) unsigned NOT NULL AUTO_INCREMENT,
+    `status_name` VARCHAR(70),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `tb_activity` (
+    `id` INT(11) unsigned NOT NULL AUTO_INCREMENT,
+    `user_id` INT(11) unsigned,
+    `activity_name` VARCHAR(70),
+    `status_id` INT(11) unsigned,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`user_id`) REFERENCES tb_user(id),
+    FOREIGN KEY (`status_id`) REFERENCES tb_status(id)
+) ENGINE=InnoDB;
+
+
+INSERT INTO tb_user (login, senha) VALUES
+('henrique', '$2y$10$tre2t9N4cAKKXNGsmlM4FOQWmEe0m1GEz9sFMNuMdDl01uQcqul.K'),
+('joao', '$2y$10$0Vw08onD0FlQ5/SDqDBsJOwQXrGZaIUeeKLw2wuv68RLBoOmDBAjm'),
+('maria', '$2y$10$DMF.85/3BkbOvKS.hazm0.0/HI2ApESVCPKLQ0Q/OMXLNLlkcDb5y');
+
+INSERT INTO tb_status (status_name) VALUES
+('To Do'),
+('Doing'),
+('Done');
+
+INSERT INTO tb_activity (user_id, activity_name, status_id) VALUES
+(1, 'Criar migrations', 1),
+(1, 'Criar tabelas banco de dados', 2),
+(1, 'Criar modelo ER', 3),
+(2, 'Implementar design aprovado', 1),
+(2, 'Validar prototipo', 2),
+(2, 'Criar prototipo front-end', 3);
