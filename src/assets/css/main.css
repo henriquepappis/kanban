@@ -151,7 +151,7 @@ button {
   overflow: hidden;
   outline: none;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 ol.kanban.To-do {
@@ -205,6 +205,7 @@ ol.kanban {
   background: #fff;
   border-radius: 2px;
   box-sizing: border-box;
+  text-decoration: none !important;
 }
 
 .title {
@@ -224,7 +225,7 @@ ol.kanban {
 
 .text {
   color: grey;
-  border-top: 1px solid font-size: 1rem;
+  border-top: 1px solid font-size 1rem;
   font-weight: 400;
   line-height: 18px;
   overflow: hidden;
@@ -237,7 +238,7 @@ ol.kanban {
   font-size: 8px;
   line-height: normal;
   width: 100%;
-  color: #B0BEC5;
+  color: #B0BEC5 !important;
   padding: 8px;
   box-sizing: border-box;
 }
@@ -273,7 +274,7 @@ ol.kanban {
   margin: 5px 0;
   padding: 5px 10px;
   color: #333;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: bold;
   border: 1px solid #ccc;
   background: #fafafa;

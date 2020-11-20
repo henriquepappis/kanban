@@ -30,7 +30,7 @@ class Activities
                         status_id
             FROM        tb_activity
             WHERE       id = :id
-        ", array(':id' => $id));
+        ", [':id' => $id]);
 
         return $result->fetch(PDO::FETCH_ASSOC);
     }
@@ -40,22 +40,47 @@ class Activities
         try {
             $conn = new Database();
 
+            if (isset($activityData['id']) && !is_null($activityData['id'])) {
+                $conn->executeQuery(
+                    "UPDATE  tb_activity
+                    SET     id = :id,
+                            activity_name =  :activity_name,
+                            user_id = :user_id,
+                            status_id = :status_id
+                    WHERE   id = :id",
+                    [
+                        ':id' => $activityData['id'],
+                        ':activity_name' => $activityData['activity_name'],
+                        ':user_id' => $activityData['user_id'],
+                        ':status_id' => $activityData['status_id']
+                    ]
+                );
+            } else {
+                $conn->executeQuery(
+                    "INSERT INTO  tb_activity (activity_name, user_id, status_id)
+                    VALUES (:activity_name, :user_id, :status_id)",
+                    [
+                        ':activity_name' => $activityData['activity_name'],
+                        ':user_id' => $activityData['user_id'],
+                        ':status_id' => $activityData['status_id']
+                    ]
+                );
+            }
+        } catch(PDOException $x) {
+            die("Erro: ".$x);
+        }
+    }
+
+    public function delete($id)
+    {
+        try {
+            $conn = new Database();
             $conn->executeQuery(
-                "UPDATE  tb_activity
-                SET     id = :id,
-                        activity_name =  :activity_name,
-                        user_id = :user_id,
-                        status_id = :status_id
-                WHERE   id = :id",
-                array(
-                    ':id' => $activityData['id'],
-                    ':activity_name' => $activityData['activity_name'],
-                    ':user_id' => $activityData['user_id'],
-                    ':status_id' => $activityData['status_id']
-                )
+                "DELETE FROM tb_activity WHERE id = :id",
+                [':id' => $id]
             );
         } catch(PDOException $x) {
-            die("Secured ".$x);
+            die("Erro: ".$x);
         }
     }
 }

@@ -46,8 +46,32 @@ class Activity extends Controller
             $Activities = $this->model('Activities');
             $Activities::save($_POST);
 
-            $data = $Activities::findAll();
-            $this->view('activity/index', ['activities' => $data]);
+            header('Location: http://localhost/');
+        } else {
+            $this->pageNotFound();
+        }
+    }
+
+    public function remove($id)
+    {
+        if (is_numeric($id)) {
+            $Activities = $this->model('Activities');
+            $activitiesData = $Activities::findById($id);
+
+            $this->view('activity/remove', ['activity' => $activitiesData]);
+        } else {
+            $this->pageNotFound();
+        }
+    }
+
+    public function delete()
+    {
+        if (isset($_POST) && !empty($_POST)) {
+            $id = $_POST['id'];
+            $Activities = $this->model('Activities');
+            $Activities::delete($id);
+
+            header('Location: http://localhost/');
         } else {
             $this->pageNotFound();
         }

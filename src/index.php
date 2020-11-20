@@ -19,17 +19,6 @@
 <body class="app">
     <div class="app-content">
         <main class="container">
-            <div class="kanban__title">
-                <h1><i class="material-icons">check</i> Gerenciamento de Atividades</h1>
-            </div>
-            <menu class="kanban">
-                <button><i class="material-icons">add_task</i> Atividades</button>
-                <a href="<?php echo $baseUrl; ?>user/index">
-                    <button>
-                        <i class="material-icons">person_add</i> Users
-                    </button>
-                </a>
-            </menu>
             <?php
                 $app = new App();
             ?>
